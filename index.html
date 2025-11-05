@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energy Disco</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json"> 
+<meta name="theme-color" content="#9f42fe">
+
+
+<link rel="apple-touch-icon" href="/iconos/apple-touch-icon.png">
+
+<link rel="icon" type="image/svg+xml" href="/iconos/favicon.svg">
+
+<link rel="icon" type="image/png" href="/iconos/favicon-96x96.png">
+
+<link rel="shortcut icon" href="/iconos/favicon.ico">
+
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "04bdf268-6549-4aff-85e0-4d5c973069d5", 
+      safari_web_id: "web.onesignal.auto.XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", 
+      notifyButton: {
+        enable: false, 
+      },
+      allowLocalhostAsSecureOrigin: true, 
+    });
+  });
+</script>
+</head>
+
+<body>
+  <div id="intro-screen">
+    <img src="/imagenes/logo-discoteca.png" alt="Energy Disco" class="intro-logo">
+  </div>
+
+  <header>
+    <img src="/imagenes/logo-discoteca.png" alt="Logo de la discoteca" class="logo">
+    <h1>Energy Disco</h1>
+    <p>
+  <strong>Energy Disco</strong> es sinónimo de noches <strong>inolvidables</strong>.  
+  Más de dos décadas marcando el ritmo en <strong>Cangas del Narcea</strong>, en un espacio donde la <strong>elegancia</strong> se encuentra con la <strong>energía</strong>.  
+  Una barra que recorre todo el local, una pista central que late al compás de la música, y una atmósfera que solo se entiende cuando se vive.  
+  </p>
+  <p>
+    <strong>Cada noche es diferente. Cada detalle, único.</strong>
+  </p>
+  </header>
+
+  <main>
+    <section id="spotify">
+      <h2>Nuestra Playlist</h2>
+      <iframe
+        src="https://open.spotify.com/embed/playlist/2bYojgQLi28sM5BUZSeveY?utm_source=generator"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </section>
+
+    <section id="djs">
+      <h2>DJs Residentes</h2>
+      <div class="dj-container">
+        <img src="imagenes/mene.png" alt="Mene DJ" class="dj-image">
+        <img src="imagenes/pablosky.png" alt="DJ Pablosky" class="dj-image">
+      </div>
+    </section>
+
+    <section id="carta">
+      <h2>Nuestra Carta</h2>
+      <div id="carta-container">
+        <p>Próximamente nuestra carta de jarras aquí...</p>
+      </div>
+    </section>
+
+    <section id="ubicacion">
+      <h2>¿Dónde estamos?</h2>
+      <h3>Encuéntranos aquí</h3>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2909.5560281425!2d-6.551895089624583!3d43.17684267100825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd31310004b5cc61%3A0xf97561fc8363b3a3!2sEnergy%20Disco!5e0!3m2!1ses!2ses!4v1761827312607!5m2!1ses!2ses"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap');
+
+:root {
+  --color-background: #121212;
+  --color-surface: #1e1e1e;
+  --color-primary: #9f42fe;
+  --color-secondary: #fa44e1;
+  --color-text: #e0e0e0;
+  --color-text-secondary: #a0a0a0;
+  --font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  font-size: 16px; 
+  box-sizing: border-box;
+}
+
+#intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle, #111 0%, #000 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+strong {
+  font-weight: 700; 
+}
+
+.intro-logo {
+  width: clamp(180px, 25vw, 300px); 
+  animation: pulse 2s infinite;
+}
+
+body.loaded #intro-screen {
+  opacity: 0;
+  pointer-events: none;
+}
+
+header {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+  border-bottom: 1px solid #282828;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+body.loaded header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo {
+  width: clamp(180px, 22vw, 260px);
+  height: auto;
+  margin-bottom: 1rem;
+  animation: pulse 2s infinite;
+}
+
+header h1 {
+  font-size: clamp(1.4rem, 2.3vw, 2.1rem);
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.3rem;
+}
+
+header p {
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  font-weight: 300;
+  color: var(--color-text-secondary);
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.2rem;
+  gap: 2.5rem;
+}
+
+section {
+  width: 90%; 
+  max-width: 900px;
+  background-color: var(--color-surface);
+  padding: 1.5rem 1.3rem;
+  margin: 1rem auto;
+  border-radius: 14px;
+  border: 1px solid #303030;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+section h2 {
+  font-size: clamp(1.2rem, 1.9vw, 1.7rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- DJs --- */
+#djs .dj-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.dj-image {
+   width: clamp(150px, 20vw, 230px);
+  height: clamp(150px, 20vw, 230px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.dj-image:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 25px var(--color-secondary);
+}
+
+iframe {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+#spotify iframe,
+#ubicacion iframe {
+  min-height: 400px;
+}
+
+#pwa-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #9f42fe 0%, #7b2cbf 100%);
+  color: white;
+  padding: 20px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+  z-index: 9999;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+#pwa-banner.hidden {
+  animation: slideDown 0.4s ease-out;
+  transform: translateY(100%);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.pwa-content {
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+
+#btn-close {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#btn-close:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.pwa-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+.pwa-content p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.pwa-content ol {
+  background: rgba(255,255,255,0.1);
+  padding: 15px 30px;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+.pwa-content ol li {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.pwa-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pwa-buttons button {
+  background: white;
+  color: #9f42fe;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  flex: 1;
+  min-width: 150px;
+}
+
+.pwa-buttons button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+}
+
+.pwa-buttons button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 600px) {
+  .pwa-buttons {
+    flex-direction: column;
+  }
+  
+  .pwa-buttons button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  html { font-size: 15px; } 
+  main { padding: 2rem 0.8rem; gap: 2rem; }
+  section { width: 92%; padding: 1.2rem; }
+  #spotify iframe, #ubicacion iframe { height: 340px; }
+  .intro-logo { width: clamp(160px, 40vw, 220px); }
+}
